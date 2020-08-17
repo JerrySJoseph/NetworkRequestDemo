@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     //Volley
     RequestQueue mRequestQueue;
     StringRequest mStringRequest;
-    String URL="Demo URL";  // Replace this with the URL of your Server
+    String URL="http://192.168.1.14/demoserver/server.php";  // Replace this with the URL of your Server
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,5 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 response.setText(error.getMessage());
             }
         });
+        //I have forgotten to add this line... please add this to your code....
+        //This adds our request to the request Queue and process the Queue
+        mRequestQueue.add(mStringRequest);
     }
 }
